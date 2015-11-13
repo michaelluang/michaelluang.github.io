@@ -1,3 +1,31 @@
+
+/* Web Font: CamingoCode
+-------------------------------------------------- */
+// Font variables
+$font-path-file-name: /assets/fonts/2EFCBF_;
+@mixin fontface($style, $weight, $id) {
+  font-family: 'CamingoCode';
+  font-style: $style;
+  font-weight: $weight;
+  src: url($font-path-file-name + $id + '_0.eot');
+  src: url($font-path-file-name + $id + '_0.eot?#iefix') format('embedded-opentype'),
+       url($font-path-file-name + $id + '_0.woff2') format('woff2'),
+       url($font-path-file-name + $id + '_0.woff') format('woff'),
+       url($font-path-file-name + $id + '_0.ttf') format('truetype');
+}
+@font-face {
+  @include fontface(italic, normal, 0);
+}
+@font-face {
+  @include fontface(normal, normal, 1);
+}
+@font-face {
+  @include fontface(normal, bold, 2);
+}
+@font-face {
+  @include fontface(italic, bold, 3);
+}
+
 /**
  * Reset some basic elements
  */
