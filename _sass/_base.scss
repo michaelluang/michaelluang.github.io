@@ -1,14 +1,17 @@
-
-/* Web Font: CamingoCode
+/* @group 1-General Styles 
 -------------------------------------------------- */
+
+/**
+ * 1.1-Web Font: CamingoCode
+ */
+
 // Font variables
 $font-path-file-name: /assets/fonts/2EFCBF_;
 @mixin fontface($style, $weight, $id) {
   font-family: 'CamingoCode';
   font-style: $style;
   font-weight: $weight;
-  src: url($font-path-file-name + $id + '_0.eot');
-  src: url($font-path-file-name + $id + '_0.eot?#iefix') format('embedded-opentype'),
+  src: url($font-path-file-name + $id + '_0.eot') format('embedded-opentype'),
        url($font-path-file-name + $id + '_0.woff2') format('woff2'),
        url($font-path-file-name + $id + '_0.woff') format('woff'),
        url($font-path-file-name + $id + '_0.ttf') format('truetype');
@@ -27,7 +30,7 @@ $font-path-file-name: /assets/fonts/2EFCBF_;
 }
 
 /**
- * Reset some basic elements
+ * 1.2-Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
