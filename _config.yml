@@ -18,5 +18,9 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: michaelluang
 github_username:  michaelluang
 
+# Where things are
+sass:
+  sass_dir: ./assets/_sass
+
 # Build settings
 markdown: kramdown
