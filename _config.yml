@@ -17,6 +17,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://michaelluang.github.io/" # the base hostname & protocol for your site
 twitter_username: michaelluang
 github_username:  michaelluang
+instagram_username: michaelluang
 
 # Where things are
 sass:
