@@ -38,7 +38,7 @@ Currently, I'm working on a Mac(Retina Display, 13-inch, Late 2013, 8G RAM, 256 
 
 There are many excellent apps available on Mac, which is the main reason I love Apple. Since I started to use Mac, I hava a feeling that my mind is no longer arranged by Microsoft. Instead, I arrange it myself by using these elegent apps!
 
-Below are some essential apps I use daily, for a complete list see [here](/about/app-list).
+Below are some essential apps I use daily, for a complete list see [here](/about/app-list/).
 
 For task management, I use [OmniFocus](https://www.omnigroup.com/omnifocus/) to keep life clear. When it comes to personal information management, [DEVONthink Pro](http://www.devontechnologies.com/products/devonthink/overview.html) helps keep data organized. For writing code, [Sublime Text](http://www.sublimetext.com) is my favorite. For writing text, I use [iA Writer](https://ia.net/writer/mac/), which I love its purity. [Tower](http://www.git-tower.com) is my favorite Git client.
 
