@@ -1,12 +1,12 @@
 (function(d3) {
   'use strict';
 
-  var w = 360; // width
-  var h = 360; // height
+  var w = 300; // width
+  var h = 300; // height
   var radius = Math.min(w,h) / 2;
-  var donutWidth = 75;
-  var legendRectSize = 18;
-  var legendSpacing = 4;
+  var donutWidth = 45;
+  var legendRectSize = 13;
+  var legendSpacing = 3;
   var color = d3.scale.category20b();
   // create SVG element
   var svg = d3.select('#chart')
@@ -21,10 +21,9 @@
                    .innerRadius(radius - donutWidth)
                    .outerRadius(radius);
 
-  // unsort the items in dataset
   var pie = d3.layout.pie()
-                     .value(function(d) { return d.time})
-                     .sort(null);
+                     .value(function(d) { return d.time});
+                     //.sort(null);
 
   // load the data file and draw the donut
   d3.csv('/report.csv', function(error, dataset) {
@@ -40,5 +39,28 @@
                     .attr('fill', function(d, i) { 
                       return color(d.data.activities);
                     });
+    // legend
+    var legend = svg.selectAll('.legend')
+                      .data(color.domain())
+                      .enter()
+                      .append('g')
+                      .attr('class', 'legend')
+                      .attr('transform', function(d, i) {
+                        var height = legendRectSize + legendSpacing;
+                        var offset = height * color.domain().length / 2;
+                        var horz = -3 * legendRectSize;
+                        var vert = i * height - offset;
+                        return 'translate(' + horz + ',' + vert + ')';
+                      });
+    legend.append('rect')
+            .attr('width', legendRectSize)
+            .attr('height', legendRectSize)
+            .style('fill', color)
+            .style('stroke', color);
+    legend.append('text')
+            .attr('x', legendRectSize + legendSpacing)
+            .attr('y', legendRectSize - legendSpacing)
+            .attr('font-size', 12)
+            .text(function(d) { return d});
   });
 })(window.d3);
