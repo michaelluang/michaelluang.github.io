@@ -24,6 +24,7 @@ date: 2016-02-14 23:38:10 +0800
 
 在2015年，我的时间开销主要包括以下几大项：
 
+<link rel="stylesheet" href="{{ "/assets/css/report.css" | prepend: site.baseurl }}">
 <div id="chart" style="text-align: center"></div>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="{{ site.baseurl }}/assets/js/report.js" charset="utf-8"></script>

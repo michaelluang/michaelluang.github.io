@@ -62,5 +62,33 @@
             .attr('y', legendRectSize - legendSpacing)
             .attr('font-size', 12)
             .text(function(d) { return d});
+    // tooltip
+    var tooltip = d3.select('#chart')
+                      .append('div')
+                      .attr('class', 'tooltip');
+    tooltip.append('div')
+              .attr('class', 'label');
+    tooltip.append('div')
+              .attr('class', 'time');
+    tooltip.append('div')
+              .attr('class', 'percent');
+
+    path.on('mouseover', function(d) {
+      var total = d3.sum(dataset.map(function(d) {
+        return d.time;
+      }));
+      var percent = Math.round(1000 * d.data.time / total) / 10;
+      tooltip.select('.label').html(d.data.activities);
+      tooltip.select('.time').html(d.data.time + 'h');
+      tooltip.select('.percent').html(percent + '%');
+      tooltip.style('display', 'block');
+    });
+    path.on('mouseout', function() {
+      tooltip.style('display', 'none');
+    });
+    path.on('mousemove', function(d) {
+      tooltip.style('top', (d3.event.layerY + 10) + 'px')
+             .style('left', (d3.event.layerX + 10) + 'px');
+    });
   });
 })(window.d3);
