@@ -18,3 +18,10 @@
   width: 80px;
   z-index: 10;
 }
+#chart rect {
+  cursor: pointer;
+  stroke-width: 2;
+}
+#chart rect.disabled {
+  fill: transparent !important;
+}

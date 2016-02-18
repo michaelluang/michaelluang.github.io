@@ -7,7 +7,7 @@
   var donutWidth = 45;
   var legendRectSize = 13;
   var legendSpacing = 3;
-  var color = d3.scale.category20b();
+  var color = d3.scale.category20();
   // create SVG element
   var svg = d3.select('#chart')
                 .append('svg')
@@ -29,6 +29,7 @@
   d3.csv('/report.csv', function(error, dataset) {
     dataset.forEach(function(d) {
       d.time = +d.time;
+      d.enabled = true; // toggle the display
     });
     // draw arc paths
     var path = svg.selectAll('path')
@@ -38,7 +39,8 @@
                     .attr('d', arcs)
                     .attr('fill', function(d, i) { 
                       return color(d.data.activities);
-                    });
+                    })
+                    .each(function(d) { this._current = d;}); // smooth animation
     // legend
     var legend = svg.selectAll('.legend')
                       .data(color.domain())
@@ -56,7 +58,41 @@
             .attr('width', legendRectSize)
             .attr('height', legendRectSize)
             .style('fill', color)
-            .style('stroke', color);
+            .style('stroke', color)
+            .on('click', function(activities) { // add clck event to labels
+              var rect = d3.select(this);
+              var enabled = true;
+              var totalEnabled = d3.sum(dataset.map(function(d) {
+                return (d.enabled) ? 1 : 0;
+              }));
+
+              if (rect.attr('class') === 'disabled') {
+                rect.attr('class', '');
+              } else {
+                if (totalEnabled < 2) return;
+                rect.attr('class', 'disabled');
+                enabled = false;
+              }
+
+              pie.value(function(d) {
+                if (d.activities === activities) {
+                  d.enabled = enabled;
+                }
+                return (d.enabled) ? d.time : 0;
+              });
+
+              path = path.data(pie(dataset));
+
+              path.transition()
+                    .duration(750)
+                    .attrTween('d', function(d) {
+                      var interpolate = d3.interpolate(this._current, d);
+                      this._current = interpolate(0);
+                      return function(t) {
+                        return arcs(interpolate(t));
+                      };
+                    });
+            });
     legend.append('text')
             .attr('x', legendRectSize + legendSpacing)
             .attr('y', legendRectSize - legendSpacing)
@@ -75,7 +111,7 @@
 
     path.on('mouseover', function(d) {
       var total = d3.sum(dataset.map(function(d) {
-        return d.time;
+        return (d.enabled) ? d.time : 0;
       }));
       var percent = Math.round(1000 * d.data.time / total) / 10;
       tooltip.select('.label').html(d.data.activities);
