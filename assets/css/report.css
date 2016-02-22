@@ -25,3 +25,19 @@
 #chart rect.disabled {
   fill: transparent !important;
 }
+#sleep1 {
+  height: 100px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-size: 12px;
+  fill: #fff;
+}

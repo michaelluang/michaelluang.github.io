@@ -28,3 +28,15 @@ date: 2016-02-14 23:38:10 +0800
 <div id="chart"></div>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="{{ site.baseurl }}/assets/js/report.js" charset="utf-8"></script>
+
+## 单项活动统计报告
+
+以下是单项活动的详细统计报告，主要包括2015年每月对应的时间花费、当月所占的时间百分比以及每天的平均时间花费。
+
+### Sleep
+
+
+<div id="sleep1"></div>
+<script src="{{ site.baseurl }}/assets/js/sleep.js" charset="utf-8"></script>
+
+
