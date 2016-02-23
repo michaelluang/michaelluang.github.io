@@ -1,12 +1,14 @@
 (function(d3) {
     'use strict';
 
-    var w = 500; // width
+    var w = 400; // width
     var h = 100; // height
     var barPadding = 1; // space betweeen bars
 
     var dataset = [265, 236, 269, 247, 263, 260, 
                    246, 256, 228, 263, 262, 253];
+    var daysPerMonth = [31, 28, 31, 30, 31, 30, 
+                        31, 31, 30, 31, 30, 31]
     // scales
     var xScale = d3.scale.ordinal()
         .domain(d3.range(dataset.length))
@@ -37,10 +39,11 @@
         .data(dataset)
         .enter()
         .append('text')
-        .text(function(d) {return d; })
+        .text(function(d) {return d + 'h'; })
         .attr('text-anchor', 'middle')
+        .attr('font-size', '12')
         .attr('x', function(d, i) { return xScale(i) + xScale.rangeBand() / 2; })
-        .attr('y', function(d) { return h - yScale(d) + 18; })
+        .attr('y', function(d) { return h - yScale(d) + 16; })
         .attr('fill', 'white');
 
     // add x Axis
@@ -54,4 +57,35 @@
         .attr('transform', 'translate(0, ' + h  + ')')
         .attr('class', 'axis')
         .call(xAxis);
+
+    // Click the svg to update with new data
+    d3.select('#sleep1')
+        .on('click', function() {
+            //redefine the yScale
+            var avgHours = [];
+            for (var i = 0; i < dataset.length; i++) {
+                avgHours.push(dataset[i] / daysPerMonth[i]);
+            }
+            var newYScale = d3.scale.linear()
+                .domain([0, d3.max(avgHours)])
+                .range([0, h]);
+            // update all rects
+            svg.selectAll('rect')
+                .data(avgHours)
+                .transition()
+                .delay(function(d,i) { return i * 100; })
+                .duration(500)
+                .attr('y', function(d) { return h - newYScale(d); })
+                .attr('height', function(d) { return newYScale(d); });
+
+            // update all labels
+            svg.selectAll('text')
+                .data(avgHours)
+                .transition()
+                .delay(function(d, i) { return i * 100; })
+                .duration(500)
+                .text(function(d, i) { return d.toFixed(2) + 'h'; })
+                .attr('font-size', '10')
+                .attr('y', function(d) { return h - newYScale(d) + 14; });
+        });
 })(window.d3);

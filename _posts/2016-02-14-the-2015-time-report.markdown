@@ -35,8 +35,13 @@ date: 2016-02-14 23:38:10 +0800
 
 ### Sleep
 
+2015年，睡觉花费3048个小时，占一年记录总时间的34.8%。
+
+每个月的分布情况为：
 
 <div id="sleep1"></div>
 <script src="{{ site.baseurl }}/assets/js/sleep.js" charset="utf-8"></script>
+
+点击图表显示每月的平均睡眠时间。
 
 
