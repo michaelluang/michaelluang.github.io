@@ -25,10 +25,11 @@
 #chart rect.disabled {
   fill: transparent !important;
 }
-#sleep1 {
-  height: 100px;
-  width: 400px;
+.activity {
+  height: 300px;
+  width: 360px;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .axis path,
@@ -38,6 +39,6 @@
   shape-rendering: crispEdges;
 }
 .axis text {
-  font-size: 12px;
+  font-size: 10px;
   fill: #fff;
 }

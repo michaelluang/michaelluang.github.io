@@ -1,25 +1,40 @@
 (function(d3) {
     'use strict';
 
-    var w = 400; // width
-    var h = 100; // height
+    var colormap = ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", 
+                    "#d62728", "#ff9896", "#9467bd", "#c5b0d5", "#8c564b"];
+
+    d3.json('/data.json', function(error, dataset) {
+        var activities = Object.keys(dataset);
+        activities.forEach(function(d, i) {
+            var id = '#' + d + '-svg';
+            var color = colormap[i];
+            report(dataset[d], id, color);
+        });
+    });
+})(window.d3);
+
+// activity report function
+function report (dataset, id, color) {
+    'use strict';
+
+    var w = 360; // width
+    var h = 300; // height
     var barPadding = 1; // space betweeen bars
 
-    var dataset = [265, 236, 269, 247, 263, 260, 
-                   246, 256, 228, 263, 262, 253];
     var daysPerMonth = [31, 28, 31, 30, 31, 30, 
                         31, 31, 30, 31, 30, 31]
     // scales
     var xScale = d3.scale.ordinal()
         .domain(d3.range(dataset.length))
-        .rangeRoundBands([0, w], 0.05);
+        .rangeRoundBands([0, w], 0.08);
 
     var yScale = d3.scale.linear()
         .domain([0, d3.max(dataset)])
         .range([0, h]);
 
     // create SVG element
-    var svg = d3.select('#sleep1')
+    var svg = d3.select(id)
       .append('svg')
         .attr('width', w)
         .attr('height', h);
@@ -32,7 +47,7 @@
         .attr('y', function(d) { return h - yScale(d); })
         .attr('width', xScale.rangeBand())
         .attr('height', function(d) { return yScale(d); })
-        .attr('fill', '#1f77b4');
+        .attr('fill', color);
 
     // add labels
     svg.selectAll('text')
@@ -41,7 +56,7 @@
         .append('text')
         .text(function(d) {return d + 'h'; })
         .attr('text-anchor', 'middle')
-        .attr('font-size', '12')
+        .attr('font-size', '10')
         .attr('x', function(d, i) { return xScale(i) + xScale.rangeBand() / 2; })
         .attr('y', function(d) { return h - yScale(d) + 16; })
         .attr('fill', 'white');
@@ -59,7 +74,7 @@
         .call(xAxis);
 
     // Click the svg to update with new data
-    d3.select('#sleep1')
+    d3.select(id)
         .on('click', function() {
             //redefine the yScale
             var avgHours = [];
@@ -84,8 +99,8 @@
                 .transition()
                 .delay(function(d, i) { return i * 100; })
                 .duration(500)
-                .text(function(d, i) { return d.toFixed(2) + 'h'; })
+                .text(function(d, i) { return d.toFixed(1) + 'h'; })
                 .attr('font-size', '10')
                 .attr('y', function(d) { return h - newYScale(d) + 14; });
         });
-})(window.d3);
+}
