@@ -1,6 +1,9 @@
 ---
 layout: page
 title: About
+description: “We are what we pretend to be, so we must be careful about what we pretend to be.” — Kurt Vonnegut
+supertext: 中文
+superlink: /about-cn/
 permalink: /about/
 ---
 

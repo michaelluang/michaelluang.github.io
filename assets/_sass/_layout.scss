@@ -171,6 +171,35 @@ $unit: 4px;
  */
 .post-header {
     margin-bottom: $spacing-unit;
+    > div.switch-language {
+      position: fixed;
+      right: 30px;
+      top: 10px;
+      z-index: 9999;
+      border: 1px solid $grey-color;
+      border-radius: 4px;
+      vertical-align: top;
+      padding: 4px 10px;
+      -webkit-user-select: none;
+              user-select: none;
+      &:hover {
+        color: #111;
+      }
+      a {
+        text-decoration: none;
+        font-size: $small-font-size;
+        color: $grey-color;
+        text-transform: uppercase;
+        &:hover {
+          color: $text-color;
+        }
+      }
+    }
+    > p {
+      font-size: $base-font-size * 0.75;
+      line-height: 1.3;
+      color: $grey-color;
+    }
 }
 
 .post-title {
