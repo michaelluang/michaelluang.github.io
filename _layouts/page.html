@@ -5,11 +5,6 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.superlink %}
-    <div class="switch-language">
-        <a href="{{page.superlink | prepend: site.baseurl }}"> {{ page.supertext }}</a>
-    </div>
-    {% endif %}
     <p>{{ page.description }}</p>
   </header>
 

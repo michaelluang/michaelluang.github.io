@@ -4,6 +4,12 @@
   {% include head.html %}
 
   <body>
+  
+    {% if page.superlink %}
+    <div class="switch-language">
+        <a href="{{page.superlink | prepend: site.baseurl }}"> {{ page.supertext }}</a>
+    </div>
+    {% endif %}
 
     {% include header.html %}
 
