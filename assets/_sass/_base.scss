@@ -79,6 +79,20 @@ img {
     vertical-align: middle;
 }
 
+.image-wrapper {
+    text-align: center;
+    margin: 30px;
+
+    img {
+        max-width: 80%;
+    }
+    
+    .image-caption {
+        color: $grey-color;
+        font-size: $small-font-size;
+    }
+}
+
 
 
 /**
