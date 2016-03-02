@@ -1,5 +1,6 @@
 ---
 layout: post
+dependencies: [d3js]
 title: "The 2015 Time Report"
 date: 2016-02-14 23:38:10 +0800
 ---
@@ -27,7 +28,6 @@ date: 2016-02-14 23:38:10 +0800
 
 <link rel="stylesheet" href="{{ "/assets/css/report.css" | prepend: site.baseurl }}">
 <div id="chart"></div>
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="{{ site.baseurl }}/assets/js/report.js" charset="utf-8"></script>
 
 ## 单项活动统计报告
