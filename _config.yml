@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   fanatic and a lifelong learner. 
 keywords: "Productivity, Creativity, Time Management, JavaScript, Web Development, Front-end Developer"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://michaelluang.github.io/" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 twitter_username: michaelluang
 github_username:  michaelluang
 instagram_username: michaelluang
