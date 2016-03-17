@@ -1,0 +1,50 @@
+<div id="image-gallery" class="image-gallery">
+    <div id="gallery-sizer" class="gallery-sizer"></div>
+    {% for picture in include.gallery.pictures %}
+    <div class="image-wrapper">
+        <a href="{{ site.baseurl }}/assets/images/gallery/{{ include.gallery.picture_path }}/{{ picture.original }}"
+           class="image"
+           data-responsive="
+               {% for size in picture.sizes %}
+                   {{ site.url}} {{ site.baseurl }}/assets/images/gallery/{{ include.gallery.picture_path }}/{{ size }}
+                   {{ size | split: '-' | last | split: '.' | first | split: 'x' | first | strip }}
+                   {% unless forloop.last %}
+                       ,
+                   {% endunless %}
+               {% endfor %}"
+            {% if picture.title %}
+                data-sub-html="<div class='lg-toolbar caption'>
+                    <h4>{{ picture.title | escape }}</h4>
+                    {% if picture.caption %}
+                        <p>{{ picture.caption | escape }}</p>
+                    {% endif %}
+                </div>"
+            {% endif %}
+            >
+            <img alt="{{ picture.title }}" 
+                 src="{{ site.url }}{{ site.baseurl }}/assets/images/gallery/{{ include.gallery.picture_path }}/{{ picture.thumbnail }}" 
+            />
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    $(document).ready(function() {
+        var $gallery = $("#image-gallery").lightGallery({
+            thumbnail: false,
+            selector: '.image'
+        });
+    });
+
+    var $grid = $("#image-gallery").isotope({
+        percentPosition: true,
+        columnWidth: '#gallery-sizer',
+        itemSelector: '.image-wrapper',
+        layoutMode: 'masonry'
+    });
+
+    $grid.imagesLoaded().progress(function() {
+        $grid.masonry();
+    });
+</script>

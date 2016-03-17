@@ -79,7 +79,8 @@ img {
     vertical-align: middle;
 }
 
-.image-wrapper {
+// conflict with gallery, change to .post-image-wrapper
+.post-image-wrapper {
     text-align: center;
     margin: 30px;
 

@@ -10,9 +10,30 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
+  
+  <!-- Dependencies -->
   {% if page.dependencies contains 'd3js' %}
   <script src="{{ "/assets/js/d3.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  {% endif %}
+
+  {% if page.dependencies contains 'jquery' %}
+  <script src="{{ "/assets/js/jquery-2.2.1.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  {% endif %}
+
+  {% if page.dependencies contains 'gallery' %}
+  <!-- lightGallery -->
+  <link rel="stylesheet" href="{{ "/assets/css/lightgallery.css" | prepend: site.baseurl }}">
+  <script src="{{ "/assets/js/lightgallery-all.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  <!-- Isotope -->
+  <script src="{{ "/assets/js/isotope.pkgd.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  <!-- Masonry -->
+  <script src="{{ "/assets/js/masonry.pkgd.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  <!-- imagesLoaded -->
+  <script src="{{ "/assets/js/imagesloaded.pkgd.min.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+  <!-- Picturefill -->
+  <!-- <script src="{{ "/assets/js/picturefill.min.js" | prepend: site.baseurl }}" charset="utf-8"></script> -->
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/gallery.css" | prepend: site.baseurl }}">
   {% endif %}
 
   <!-- Favicon -->
