@@ -1,0 +1,73 @@
+---
+layout: post
+title: 5.12 Never Forget
+date: 2016-05-12 21:06:10 +0800
+---
+
+{% include image.html
+    img="assets/images/posts/2016-05/never_forget.jpeg"
+    title="她在这个世界上开心地生活过七年"
+    caption="她在这个世界上开心地生活过七年"%}
+
+今天是 5.12 汶川大地震八周年纪念日。了解真相，拒绝遗忘，才是最好的纪念。整理了一些资料，主要是关于[艾未未](http://zh.wikipedia.org/wiki/艾未未)发起的公民调查相关的资料。（注：访问需翻墙）
+
+## 5.12 公民调查
+
+- 公民调查[主页](http://aiweiwei.com/zh-hans/项目/5-12-民工调查/)：全面了解 5.12 汶川大地震死难学生的真实情况。
+
+- 维基百科上关于[汶川大地震死难学生调查活动](http://zh.wikipedia.org/wiki/汶川大地震死难学生调查活动)的介绍。
+
+## 纪录片
+
+### 《4851》：你的87分钟，他们的一生。
+
+YouTube[链接](https://www.youtube.com/watch?v=qssniSdhQO8)
+
+介绍：2008年5月12日14点28分，中国四川发生大地震，5000多名中小学生被埋入­废墟当中，中国政府拒绝公布他们的名字。于是，“公民调查”开始寻找这些遇难学生的名­字和相关信息。截止2009年9月2日，公民调查共确认了4851名遇难学生信息。本­片献给这些无辜逝去的生命。
+
+时至今日，政府依然拒绝公布死亡学生的名字，依然拒绝调查腐败豆腐渣工程。
+
+### 《花脸巴儿》
+
+YouTube[链接](https://www.youtube.com/watch?v=HuK5pSfZ1LA)
+
+介绍：2008年12月15日，【公民调查】启动。 【公民调查】覆盖了四川 5.12 地震地区的十四个区、市、县、乡镇，调查了一百五十三­所学校的受灾情况， 收集并确定年龄、地区、学校、班级等完整信息的遇难学生为5192人。 在近一百人的志愿者中，参与实地调查的38个志愿者中有25人45次被四川警方控制。本记录片是公民调查”工作的一个组成部分。
+
+### 5.12遇难学生家长三周年访谈
+
+YouTube[链接](https://www.youtube.com/playlist?list=PLCE64120F30B98DC0)
+
+6段访谈，包括了对北川中学、聚源中学、木鱼中学、富新二小、东汽中学的遇难学生家长的采访实录。
+
+### 《老妈蹄花》 
+
+{% include image.html
+    img="assets/images/posts/2016-05/laoma_tihua.jpg"
+    title="老妈蹄花"
+    caption="老妈蹄花"%}
+
+YouTube[链接](https://www.youtube.com/watch?v=OD_Em5xHUKg)
+
+介绍： [谭作人](https://zh.wikipedia.org/wiki/谭作人)因为调查 512 汶川地震伤亡学生与豆腐渣工程问题被起诉。艾未未工作室为2009年8月12日“[谭作人](https://zh.wikipedia.org/wiki/谭作人)煽动颠覆­国家政权”案的审理过程中，四川成都警方拘禁证人，暴力干扰司法程序而制作。
+
+### 《深表遗憾》
+
+{% include image.html
+    img="assets/images/posts/2016-05/so_sorry.png"
+    title="深表遗憾"
+    caption="深表遗憾"%}
+
+YouTube[链接](https://www.youtube.com/watch?v=XA8vEHRqmrQ)
+
+介绍：《深表遗憾》是《老妈蹄花》的续集，以艾未未2009年德国慕尼黑展览命名，讲­述了艾未未和中国政府之间紧张关系的缘由。在《老妈蹄花》中，艾未未作为证人到中国成­都为维权人士[谭作人](https://zh.wikipedia.org/wiki/谭作人)出庭作证。在《深表遗憾》中，由于艾未未工作室调查四川地震死于豆­腐渣工程的死亡学生名单，使艾未未在成都遭到警方暴力。之后，艾未未到德国慕尼黑“艺术之家”博物馆备展时，被殴打部位脑部出血导致剧烈头痛，被送医­院紧急手术抢救。这是艾未未抗争及被警方监视的开始。
+
+### 《劫后天府泪纵横》
+
+{% include image.html
+    img="assets/images/posts/2016-05/the_tears_of_sichuan_province.jpg"
+    title="劫后天府泪纵横"
+    caption="劫后天府泪纵横"%}
+
+YouTube[链接](https://www.youtube.com/watch?v=XfMTDmaWIto)
+
+介绍：该纪录片由美国HBO出资拍摄，获得了2009年奥斯卡“记录短片”奖项提名，主要反映了灾区校舍倒塌反映出的人祸问题及死难者学生的父母对建筑工程品质的质疑和维权之路。
